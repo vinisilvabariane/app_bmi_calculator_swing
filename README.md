@@ -37,8 +37,8 @@ Contribuições são bem-vindas! Se você encontrar algum problema ou tiver suge
 ----------------------
 Imagens:
 ----------------------
-
-![Captura de tela 2024-02-21 122720](https://github.com/vinisilvabariane/Calculadora-IMC/assets/146668696/612ec0b3-de43-4e08-8d99-301a48639899)
-![Captura de tela 2024-02-21 122624](https://github.com/vinisilvabariane/Calculadora-IMC/assets/146668696/15c58db2-77e9-49c4-aa52-87047cfc54c2)
-![Captura de tela 2024-02-21 122645](https://github.com/vinisilvabariane/Calculadora-IMC/assets/146668696/2a1f48ec-5337-4b31-913b-6a1cfd2df28c)
-![Captura de tela 2024-02-21 122704](https://github.com/vinisilvabariane/Calculadora-IMC/assets/146668696/427884e6-f5b8-48bc-a9f6-f243af9e01ff)
+<img width="1919" height="1079" alt="Captura de tela 2026-08-22 070009" src="https://github.com/user-attachments/assets/c2ebae79-188b-4cb5-8400-19244d536f45" />
+<img width="1919" height="1079" alt="Captura de tela 2026-08-22 070147" src="https://github.com/user-attachments/assets/f917aad6-b8eb-4fad-bb7b-6d0201f44f9e" />
+<img width="1919" height="1079" alt="Captura de tela 2026-08-22 070125" src="https://github.com/user-attachments/assets/84456a94-199f-414a-a67f-ad2f8fda6ddd" />
+<img width="1919" height="1079" alt="Captura de tela 2026-08-22 070044" src="https://github.com/user-attachments/assets/2351cd7e-58ad-40e0-a0aa-3a48837830be" />
+<img width="1919" height="1079" alt="Captura de tela 2026-08-22 070017" src="https://github.com/user-attachments/assets/0bfe2556-64c7-4342-8fe1-97e2a3d35f28" />
