@@ -1,148 +1,38 @@
 package telas;
 
-public class Menu extends javax.swing.JFrame {
+import java.awt.*;
+import javax.swing.*;
 
+public class Menu extends JFrame {
     public Menu() {
-        initComponents();
+        UI.frame(this, "Pulso · saúde em números", 900, 590);
+        JPanel root = new JPanel(new BorderLayout(34, 20));
+        root.setOpaque(false); root.setBorder(BorderFactory.createEmptyBorder(48, 58, 44, 58));
+
+        JPanel intro = new JPanel(); intro.setOpaque(false); intro.setLayout(new BoxLayout(intro, BoxLayout.Y_AXIS));
+        intro.add(UI.eyebrow("PULSO / CALCULADORA DE SAÚDE")); intro.add(Box.createVerticalStrut(18));
+        intro.add(UI.title("Entenda seu corpo\n", 38));
+        JLabel headline = UI.title("um número de cada vez.", 38); headline.setForeground(UI.CORAL); intro.add(headline);
+        intro.add(Box.createVerticalStrut(16));
+        intro.add(UI.body("Ferramentas simples para acompanhar IMC,\nenergia diária e equilíbrio nutricional."));
+        intro.add(Box.createVerticalGlue());
+        JLabel note = UI.body("Seu ponto de partida para escolhas mais conscientes."); note.setFont(new Font("SansSerif", Font.ITALIC, 12)); intro.add(note);
+        root.add(intro, BorderLayout.WEST);
+
+        JPanel options = new JPanel(new GridLayout(3, 1, 0, 13)); options.setOpaque(false); options.setPreferredSize(new Dimension(330, 360));
+        options.add(option("01", "Calcular IMC", "Peso e altura em uma leitura clara", UI.MINT, () -> open(new IMC())));
+        options.add(option("02", "Gasto calórico", "Estime a energia que seu corpo usa", UI.LILAC, () -> open(new Gasto())));
+        options.add(option("03", "Recomendação", "Distribua seus macros do dia", UI.CORAL, () -> open(new Recomendacao())));
+        root.add(options, BorderLayout.EAST); add(root);
     }
-    
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        Box1 = new javax.swing.JPanel();
-        imc = new javax.swing.JButton();
-        Gasto = new javax.swing.JButton();
-        Reco = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        imc.setText("IMC");
-        imc.setPreferredSize(new java.awt.Dimension(150, 30));
-        imc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imcActionPerformed(evt);
-            }
-        });
-
-        Gasto.setText("Gasto Calórico");
-        Gasto.setPreferredSize(new java.awt.Dimension(150, 30));
-        Gasto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GastoActionPerformed(evt);
-            }
-        });
-
-        Reco.setText("Recomendação");
-        Reco.setPreferredSize(new java.awt.Dimension(150, 30));
-        Reco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RecoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Box1Layout = new javax.swing.GroupLayout(Box1);
-        Box1.setLayout(Box1Layout);
-        Box1Layout.setHorizontalGroup(
-            Box1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Box1Layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addComponent(Gasto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
-                .addComponent(imc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
-                .addComponent(Reco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
-        );
-        Box1Layout.setVerticalGroup(
-            Box1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Box1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addGroup(Box1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Gasto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Reco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/ima.png"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(223, 223, 223)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Box1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(Box1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void RecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecoActionPerformed
-        Recomendacao reco = new Recomendacao();
-        reco.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_RecoActionPerformed
-
-    private void imcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imcActionPerformed
-        IMC telaImc = new IMC();
-        telaImc.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_imcActionPerformed
-
-    private void GastoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GastoActionPerformed
-        Gasto gasto = new Gasto();
-        gasto.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_GastoActionPerformed
-
-    
-    public static void main(String args[]) {
-        
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
+    private JPanel option(String number, String title, String sub, Color accent, Runnable action) {
+        JPanel card = UI.card(); card.setLayout(new BorderLayout(14, 0));
+        JLabel n = UI.title(number, 19); n.setForeground(accent); card.add(n, BorderLayout.WEST);
+        JPanel text = new JPanel(); text.setOpaque(false); text.setLayout(new BoxLayout(text, BoxLayout.Y_AXIS));
+        text.add(UI.title(title, 17)); text.add(Box.createVerticalStrut(5)); text.add(UI.body(sub)); card.add(text, BorderLayout.CENTER);
+        JButton go = UI.button("→", accent); go.setPreferredSize(new Dimension(50, 42)); go.addActionListener(e -> action.run()); card.add(go, BorderLayout.EAST);
+        return card;
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Box1;
-    private javax.swing.JButton Gasto;
-    private javax.swing.JButton Reco;
-    private javax.swing.JButton imc;
-    private javax.swing.JLabel jLabel1;
-    // End of variables declaration//GEN-END:variables
+    private void open(JFrame frame) { frame.setVisible(true); dispose(); }
+    public static void main(String[] args) { SwingUtilities.invokeLater(() -> new Menu().setVisible(true)); }
 }
